@@ -1,40 +1,43 @@
 (function() {
 
+	var WFM_SERVER = 'https://csbuild.grouponinc.net/zd-scripts/ticket-analyzer/wfm_test.php';
+
+
 	return {
 		requests: {
 			pingServer: function(data) {
 				return {
-					url: this.setting('wfm_server'),
+					url: WFM_SERVER,
 					type: 'POST',
 					data: data
 				};
 			}
 		},
 		events: {
-			'app.activated': 'startWork',
-			'app.willDestroy': 'stopWork'
+			'app.activated': function() {
+				this.ping("start");
+			},
+			'app.deactivated': function() {
+				this.ping("stop");
+			},
+			'app.willDestroy': function() {
+				this.ping("destroy");
+			},
+			'ticket.save': function() {
+				this.ping("save");
+			}
 
 		},
-		startWork: function() {
+		ping: function(state) {
 			var data = {
 				"domain": this.currentAccount().subdomain(),
 				"ticket_id": this.ticket().id(),
 				"assignee_id": this.currentUser().id(),
-				"state": "start"
+				"state": state
 			};
 
 			this.ajax('pingServer', data);
 		},
-		stopWork: function() {
-			var data = {
-				"domain": this.currentAccount().subdomain(),
-				"ticket_id": this.ticket().id(),
-				"assignee_id": this.currentUser().id(),
-				"state": "stop"
-			};
-
-			this.ajax('pingServer', data);
-		}
 
 	};
 
