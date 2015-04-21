@@ -33,7 +33,8 @@
 				"domain": this.currentAccount().subdomain(),
 				"ticket_id": this.ticket().id(),
 				"assignee_id": this.currentUser().id(),
-				"state": state
+				"state": state,
+				"email": this.currentUser().email()
 			};
 
 			this.ajax('pingServer', data);
