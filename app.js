@@ -1,6 +1,6 @@
 (function() {
 
-	var WFM_SERVER = 'https://csbuild.grouponinc.net/zd-scripts/ticket-analyzer/wfm_test.php';
+	var WFM_SERVER = 'https://wfmserver.herokuapp.com/api/v1/ping/';
 
 
 	return {
