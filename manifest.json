@@ -1,14 +1,17 @@
 {
-	"name": "WFM Pinger",
-	"author": {
-		"name": "Eric Dahl",
-		"email": "edahl@groupon.com",
-		"url": ""
-	},
-	"defaultLocale": "en",
-	"private": true,
-	"location": ["ticket_sidebar", "new_ticket_sidebar"],
-	"version": "1.0.3",
-	"frameworkVersion": "1.0",
-	"noTemplate": true
+  "name": "WFM Pinger",
+  "author": {
+    "name": "Eric Dahl",
+    "email": "edahl@groupon.com",
+    "url": ""
+  },
+  "defaultLocale": "en",
+  "private": true,
+  "location": [
+    "ticket_sidebar",
+    "new_ticket_sidebar"
+  ],
+  "version": "1.0.4",
+  "frameworkVersion": "1.0",
+  "noTemplate": true
 }
