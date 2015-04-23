@@ -1,5 +1,6 @@
 (function() {
 
+	console.log(this.setting('wfm_server'));
 	var WFM_SERVER = 'https://wfmserver.herokuapp.com/api/v1/ping/';
 
 
