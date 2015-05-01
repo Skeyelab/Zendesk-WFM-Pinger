@@ -22,7 +22,7 @@
 				this.ping("destroy");
 			},
 			'ticket.save': function() {
-				this.ping("save");
+				this.ping("save " + this.comment().type());
 			}
 
 		},
